@@ -5,7 +5,7 @@ import ImagemSena from '@/assets/imagem_sena.jpg';
 
 export default function HeroSection() {
     const handleWhatsAppClick = () => {
-        const url = `https://wa.me/86989030943?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços.)}`;
+        const url = `https://wa.me/86989030943?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços.')}`;
         window.open(url, '_blank');
     };
 

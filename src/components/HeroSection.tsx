@@ -10,7 +10,7 @@ export default function HeroSection() {
     };
 
     return (
-        <section className="flex flex-col md:flex-row items-center justify-around max-h-screen py-10 px-5 md:py-20 md:px-10 bg-gradient-to-r from-green-900 to-green-600 text-gray-100 border-b border-green-700">
+        <section className="flex flex-col md:flex-row items-center justify-around py-10 px-5 md:py-20 md:px-10 bg-gradient-to-r from-green-900 to-green-600 text-gray-100 border-b border-green-700">
             
             <div className="max-w-lg text-center md:text-left mb-10 md:mb-0">
                 <motion.h3

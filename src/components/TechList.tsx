@@ -1,9 +1,13 @@
 "use client";
 
-import React, { forwardRef } from 'react';
-import { motion } from 'framer-motion';
+import { forwardRef } from 'react';
+import { motion, AnimationControls } from 'framer-motion';
 import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
+
+type TechListProps = {
+    controls: AnimationControls;
+};
 
 const techs = [
     { icon: <SiNextdotjs className="w-8 h-8 mr-2 text-blue-500" />, name: 'Next.js' },
@@ -13,10 +17,6 @@ const techs = [
     { icon: <FaCss3Alt className="w-8 h-8 mr-2 text-blue-500" />, name: 'CSS' },
     { icon: <FaJsSquare className="w-8 h-8 mr-2 text-yellow-500" />, name: 'JavaScript' },
 ];
-
-type TechListProps = {
-    controls: any;
-};
 
 const TechList = forwardRef<HTMLUListElement, TechListProps>(({ controls }, ref) => {
     return (
@@ -36,5 +36,7 @@ const TechList = forwardRef<HTMLUListElement, TechListProps>(({ controls }, ref)
         </motion.ul>
     );
 });
+
+TechList.displayName = 'TechList';
 
 export default TechList;

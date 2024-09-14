@@ -38,7 +38,7 @@ export default function About() {
     return (
         <section className="py-20 bg-yellow-50 text-gray-700">
             <div className="max-w-7xl mx-auto px-6">
-                
+
                 <motion.h2
                     className="text-4xl font-extrabold mb-10 text-center"
                     initial={{ opacity: 0, y: -20 }}
@@ -82,11 +82,12 @@ export default function About() {
                 >
                     <h3 className="text-3xl font-bold mb-6 text-center">Sobre</h3>
                     <p className="text-lg mb-4 text-center">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint quibusdam maxime, soluta, quod sed quidem ullam inventore eveniet voluptate facilis nisi unde molestias tempora quae libero neque necessitatibus nemo quos.
+                        Atualmente, estou cursando Análise e Desenvolvimento de Sistemas no Centro Universitário Maurício de Nassau, após concluir a formação técnica em Informática no Instituto Federal do Piauí.
                     </p>
-                    <p className="text-lg text-center">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid doloremque error hic? Eligendi tempore impedit rerum dolor esse, adipisci deserunt doloribus delectus, natus, ad cumque vero iste officiis provident blanditiis.
+                    <p className="text-lg mb-4 text-center">
+                        Sou um desenvolvedor júnior com experiência em desenvolvimento FullStack com PHP, além de habilidades na criação de aplicações móveis utilizando React Native e Flutter.
                     </p>
+
                 </motion.div>
 
                 {/* Contato */}
@@ -99,20 +100,20 @@ export default function About() {
                 >
                     <h3 className="text-3xl font-bold mb-6">Contato</h3>
                     <div className="flex flex-col md:flex-row justify-start gap-6">
-                        <ContactCard    
-                            Icon={FaEnvelope} 
-                            link="mailto:passosjoaogabriel29@gmail.com" 
-                            title="Email" 
+                        <ContactCard
+                            Icon={FaEnvelope}
+                            link="mailto:passosjoaogabriel29@gmail.com"
+                            title="Email"
                         />
-                        <ContactCard 
-                            Icon={FaGithub} 
-                            link="https://github.com/js3na" 
-                            title="GitHub" 
+                        <ContactCard
+                            Icon={FaGithub}
+                            link="https://github.com/js3na"
+                            title="GitHub"
                         />
-                        <ContactCard 
-                            Icon={FaWhatsapp} 
-                            link="https://wa.me/86989030943" 
-                            title="WhatsApp" 
+                        <ContactCard
+                            Icon={FaWhatsapp}
+                            link="https://wa.me/86989030943"
+                            title="WhatsApp"
                         />
                     </div>
                 </motion.div>

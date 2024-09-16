@@ -43,7 +43,7 @@ export default function HeroSection() {
                 <div className='flex flex-col md:flex-row md:justify-between gap-4'>
                     <motion.a
                         href="#services"
-                        className="inline-block bg-green-700 text-green-100 py-3 px-8 rounded-lg shadow-lg hover:bg-green-600 transition transform hover:scale-105"
+                        className="pointer inline-block bg-green-700 text-green-100 py-3 px-8 rounded-lg shadow-lg hover:bg-green-600 transition transform hover:scale-105"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
@@ -53,7 +53,7 @@ export default function HeroSection() {
 
                     <motion.a
                         onClick={handleWhatsAppClick}
-                        className="inline-block bg-green-100 text-green-700 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-green-300 transition transform hover:scale-105"
+                        className="pointer inline-block bg-green-100 text-green-700 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-green-300 transition transform hover:scale-105"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.8 }}

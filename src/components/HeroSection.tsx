@@ -32,7 +32,7 @@ export default function HeroSection() {
                 </motion.h1>
 
                 <motion.p
-                    className="text-base md:text-lg text-green-200 mb-8 leading-relaxed"
+                    className="cursor-pointer text-base md:text-lg text-green-200 mb-8 leading-relaxed"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -40,7 +40,7 @@ export default function HeroSection() {
                     Criando sites que são atraentes, fiéis à identidade da marca e fáceis de usar.
                 </motion.p>
 
-                <div className='flex flex-col md:flex-row md:justify-between gap-4'>
+                <div className='cursor-pointer flex flex-col md:flex-row md:justify-between gap-4'>
                     <motion.a
                         href="#services"
                         className="pointer inline-block bg-green-700 text-green-100 py-3 px-8 rounded-lg shadow-lg hover:bg-green-600 transition transform hover:scale-105"

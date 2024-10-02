@@ -1,7 +1,11 @@
+
+# Potifólio
+
+Portfolio built using the **Next.js** and **Tailwind CSS** frameworks. You can access it at [joao-sena.vercel.app](https://joao-sena.vercel.app).
+
 ## Introduction
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 
 ## Getting Started
 

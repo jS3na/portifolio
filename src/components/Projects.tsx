@@ -15,11 +15,10 @@ export default function ProjectSection() {
 
     const { ref: textRef, inView: textInView } = useInView({ triggerOnce: true });
     const { ref: techRef, inView: techInView } = useInView({ triggerOnce: true });
-    const { ref: galleryRef, inView: galleryInView } = useInView({ triggerOnce: true });
+    const { ref: galleryRef } = useInView({ triggerOnce: true });
 
     const textControls = useAnimation();
     const techControls = useAnimation();
-    const galleryControls = useAnimation();
 
     useEffect(() => {
         if (textInView) {

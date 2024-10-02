@@ -9,9 +9,10 @@ type ProjectCardProps = {
     image: StaticImageData;
     title: string;
     description: string;
+    onClick: () => void;
 };
 
-const ProjectCard: FC<ProjectCardProps> = ({ image, title, description }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ image, title, description, onClick }) => {
     const { ref, inView } = useInView({ triggerOnce: true });
     const animationControls = useAnimation();
 
@@ -30,6 +31,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ image, title, description }) => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={animationControls}
             transition={{ duration: 0.6 }}
+            onClick={onClick}
         >
             <Image src={image} alt={title} className="w-full h-40 object-cover rounded-lg mb-4 shadow-md" />
             <h3 className="text-xl font-bold mb-2 text-green-900">{title}</h3>

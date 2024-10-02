@@ -36,6 +36,13 @@ export default function ProjectSection() {
         }
     }, [techInView, techControls]);
 
+    const handleImageClick = (image: StaticImageData) => {
+        setSelectedImage(image);
+    };
+    const handleCloseOverlay = () => {
+        setSelectedImage(null);
+    };
+
     return (
         <section id="projects" className="py-20 px-6 md:px-10 bg-gradient-to-r bg-lime-100 text-gray-800 border-b border-black">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -70,16 +77,19 @@ export default function ProjectSection() {
                         image={ProjetoLeticia}
                         title="Landing Page para Fisioterapia"
                         description="Desenvolvido com o framework Next.js e TailWind CSS"
+                        onClick={() => handleImageClick(ProjetoLeticia)}
                     />
                     <ProjectCard
                         image={ProjetoRealEstate}
                         title="Aplicativo para Imobiliária"
                         description="Desenvolvido com o framework React Native, consumindo a API do Firebase e do Clerk"
+                        onClick={() => handleImageClick(ProjetoLeticia)}
                     />
                 </div>
             </div>
 
             <Overlay image={selectedImage} onClose={() => setSelectedImage(null)} />
+                
         </section>
     );
 }

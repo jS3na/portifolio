@@ -88,7 +88,7 @@ export default function ProjectSection() {
                 </div>
             </div>
 
-            <Overlay image={selectedImage} onClose={() => setSelectedImage(null)} />
+            <Overlay image={selectedImage} onClose={handleCloseOverlay} />
                 
         </section>
     );

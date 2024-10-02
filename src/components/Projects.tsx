@@ -1,14 +1,14 @@
 "use client";
 
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect, useState } from 'react';
-import TechList from './TechList';
-import ProjectCard from './ProjectCard';
-import Overlay from './Overlay';
-import ProjetoLeticia from '@/assets/projeto_leticia.png';
-import ProjetoRealEstate from '@/assets/real_estate.png';
-import { StaticImageData } from 'next/image';
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
+import TechList from "./TechList";
+import ProjectCard from "./ProjectCard";
+import Overlay from "./Overlay";
+import ProjetoLeticia from "@/assets/projeto_leticia.png";
+import ProjetoRealEstate from "@/assets/real_estate.png";
+import { StaticImageData } from "next/image";
 
 export default function ProjectSection() {
     const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(null);
@@ -36,22 +36,6 @@ export default function ProjectSection() {
             techControls.start({ opacity: 0, y: 20 });
         }
     }, [techInView, techControls]);
-
-    useEffect(() => {
-        if (galleryInView) {
-            galleryControls.start({ opacity: 1, scale: 1 });
-        } else {
-            galleryControls.start({ opacity: 0, scale: 0.95 });
-        }
-    }, [galleryInView, galleryControls]);
-
-    const handleImageClick = (image: StaticImageData) => {
-        setSelectedImage(image);
-    };
-
-    const handleCloseOverlay = () => {
-        setSelectedImage(null);
-    };
 
     return (
         <section id="projects" className="py-20 px-6 md:px-10 bg-gradient-to-r bg-lime-100 text-gray-800 border-b border-black">
@@ -87,18 +71,16 @@ export default function ProjectSection() {
                         image={ProjetoLeticia}
                         title="Landing Page para Fisioterapia"
                         description="Desenvolvido com o framework Next.js e TailWind CSS"
-                        onClick={() => handleImageClick(ProjetoLeticia)}
                     />
                     <ProjectCard
                         image={ProjetoRealEstate}
                         title="Aplicativo para Imobiliária"
                         description="Desenvolvido com o framework React Native, consumindo a API do Firebase e do Clerk"
-                        onClick={() => handleImageClick(ProjetoRealEstate)}
                     />
                 </div>
             </div>
 
-            <Overlay image={selectedImage} onClose={handleCloseOverlay} />
+            <Overlay image={selectedImage} onClose={() => setSelectedImage(null)} />
         </section>
     );
 }

@@ -83,7 +83,7 @@ export default function ProjectSection() {
                         image={ProjetoRealEstate}
                         title="Aplicativo para Imobiliária"
                         description="Desenvolvido com o framework React Native, consumindo a API do Firebase e do Clerk"
-                        onClick={() => handleImageClick(ProjetoLeticia)}
+                        onClick={() => handleImageClick(ProjetoRealEstate)}
                     />
                 </div>
             </div>

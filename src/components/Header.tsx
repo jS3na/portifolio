@@ -1,35 +1,37 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
 
 type NavProps = {
-    link: string;
-    title: string;
+    link: string
+    title: string
 }
 
 const NavLink = ({ link, title }: NavProps) => (
-    <a href={link} className="text-white hover:bg-white hover:text-black rounded-lg p-2">
+    <a
+        href={link}
+        className="text-gray-700 hover:text-gray-900 transition-colors duration-200 px-2 py-1 text-sm font-medium"
+    >
         {title}
     </a>
-);
+)
 
 export default function Header() {
-    const [isClick, setIsClick] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    const toggleNavbar = () => {
-        setIsClick(!isClick);
-    };
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen)
+    }
 
     return (
-        <nav className="bg-black">
+        <nav className="bg-lime-100 backdrop-blur-md w-full z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <div className="flex-shrink-0">
-                            <a href="/" className="text-white text-xl font-bold">
-                                João Gabriel Sena
-                            </a>
-                        </div>
+                        <a href="/" className="text-gray-900 text-xl font-semibold">
+                            João Gabriel Sena
+                        </a>
                     </div>
 
                     <div className="hidden md:flex items-center space-x-4">
@@ -40,29 +42,19 @@ export default function Header() {
                         <NavLink link="#contact" title="Contato" />
                     </div>
 
-                    {/* Botão Menu */}
-                    <div className="md:hidden flex items-center">
+                    <div className="md:hidden">
                         <button
-                            className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                            onClick={toggleNavbar}
+                            className="text-gray-700 hover:text-gray-900 focus:outline-none"
+                            onClick={toggleMenu}
                         >
-                            {isClick ? (
-                                <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            ) : (
-                                <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                                </svg>
-                            )}
+                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
             </div>
 
-            {/* Menu */}
-            {isClick && (
-                <div className="md:hidden">
+            {isMenuOpen && (
+                <div className="md:hidden bg-white/95 backdrop-blur-md">
                     <div className="px-2 pt-2 pb-3 space-y-1">
                         <NavLink link="#projects" title="Projetos" />
                         <NavLink link="#services" title="Serviços" />
@@ -73,5 +65,5 @@ export default function Header() {
                 </div>
             )}
         </nav>
-    );
+    )
 }

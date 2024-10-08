@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Terminal, Code, Zap } from "lucide-react"
+import { Terminal, Code } from "lucide-react"
 import ImagemSena from '@/assets/imagem_sena.jpg'
 
 export default function HeroSection() {

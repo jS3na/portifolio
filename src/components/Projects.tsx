@@ -8,6 +8,7 @@ import ProjectCard from "./ProjectCard";
 import Overlay from "./Overlay";
 import ProjetoLeticia from "@/assets/projeto_leticia.png";
 import ProjetoRealEstate from "@/assets/real_estate.png";
+import ProjetoGrupoFabrica from "@/assets/landing_grupofabrica.png";
 import { StaticImageData } from "next/image";
 
 export default function ProjectSection() {
@@ -84,6 +85,12 @@ export default function ProjectSection() {
                         title="Aplicativo para Imobiliária"
                         description="Desenvolvido com o framework React Native, consumindo a API do Firebase e do Clerk"
                         onClick={() => handleImageClick(ProjetoRealEstate)}
+                    />
+                    <ProjectCard
+                        image={ProjetoGrupoFabrica}
+                        title="Landing Page para empresa de eventos"
+                        description="Desenvolvido com o framework Next.js e TailWind CSS"
+                        onClick={() => handleImageClick(ProjetoGrupoFabrica)}
                     />
                 </div>
             </div>

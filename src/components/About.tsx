@@ -36,7 +36,7 @@ const ContactCard = ({ Icon, link, title }: ContactProps) => (
 
 export default function About() {
     return (
-        <section className="py-20 bg-yellow-50 text-gray-700">
+        <section className="py-20 bg-lime-50 text-gray-700">
             <div className="max-w-7xl mx-auto px-6">
 
                 <motion.h2

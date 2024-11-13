@@ -45,8 +45,8 @@ export default function ProjectSection() {
     };
 
     return (
-        <section id="projects" className="py-20 px-6 md:px-10 bg-gradient-to-r bg-lime-100 text-gray-800 border-b border-black">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <section id="projects" className="py-20 px-6 md:px-10 bg-lime-100 text-gray-800 border-b border-black">
+            <div className="max-w-[100rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 <motion.div
                     ref={textRef}
                     initial={{ opacity: 0, x: -50 }}
@@ -73,7 +73,7 @@ export default function ProjectSection() {
                     <TechList ref={techRef} controls={techControls} />
                 </motion.div>
 
-                <div ref={galleryRef} className="grid grid-cols-1 gap-6">
+                <div ref={galleryRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <ProjectCard
                         image={ProjetoLeticia}
                         title="Landing Page para Fisioterapia"

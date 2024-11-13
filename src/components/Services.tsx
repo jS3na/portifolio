@@ -31,12 +31,12 @@ export default function ServicesSection() {
     return (
         <section
             id="services"
-            className="py-20 px-6 bg-gradient-to-r from-green-900 to-green-600 text-green-100 border-b border-green-700"
+            className="py-20 px-6 bg-gradient-to-r from-gray-800 to-green-700 text-green-100 border-b border-green-700"
         >
             <div className="max-w-7xl mx-auto text-center">
                 <motion.h2
                     ref={h2Ref}
-                    className="text-4xl md:text-5xl font-extrabold mb-8 md:mb-10"
+                    className="text-white text-4xl md:text-5xl font-extrabold mb-8 md:mb-10"
                     initial={{ opacity: 0, y: -50 }}
                     animate={h2Controls}
                     transition={{ duration: 0.6 }}
@@ -46,7 +46,7 @@ export default function ServicesSection() {
 
                 <motion.p
                     ref={pRef}
-                    className="text-lg md:text-xl mb-12 md:mb-16 text-green-200"
+                    className=" text-lg md:text-xl mb-12 md:mb-16 text-green-200"
                     initial={{ opacity: 0, y: 20 }}
                     animate={pControls}
                     transition={{ duration: 0.6, delay: 0.3 }}

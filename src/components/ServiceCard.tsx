@@ -25,7 +25,7 @@ export default function ServiceCard({ title, description, delay }: ServiceCardPr
     return (
         <motion.div
             ref={ref}
-            className="bg-green-800 p-6 md:p-8 shadow-lg rounded-lg transform transition-transform hover:scale-105"
+            className="bg-green-800 p-6 md:p-8 shadow-xl rounded-lg transform transition-transform hover:scale-105"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={controls}
             transition={{ duration: 0.6, delay }}

@@ -6,9 +6,12 @@ import { useEffect, useState } from "react";
 import TechList from "./TechList";
 import ProjectCard from "./ProjectCard";
 import Overlay from "./Overlay";
+
 import ProjetoLeticia from "@/assets/projeto_leticia.png";
 import ProjetoRealEstate from "@/assets/real_estate.png";
 import ProjetoGrupoFabrica from "@/assets/landing_grupofabrica.png";
+import ProjetoDoutoraBiotec from "@/assets/projeto_doutorabiotec.png";
+
 import { StaticImageData } from "next/image";
 
 export default function ProjectSection() {
@@ -91,6 +94,12 @@ export default function ProjectSection() {
                         title="Landing Page para empresa de eventos"
                         description="Desenvolvido com o framework Next.js e TailWind CSS"
                         onClick={() => handleImageClick(ProjetoGrupoFabrica)}
+                    />
+                    <ProjectCard
+                        image={ProjetoDoutoraBiotec}
+                        title="Site de notícias e publicações de lâminas de análises clínicas."
+                        description="Desenvolvido com o framework Next.js, TailWind CSS e com uma API feita em Flask"
+                        onClick={() => handleImageClick(ProjetoDoutoraBiotec)}
                     />
                 </div>
             </div>

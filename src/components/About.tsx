@@ -82,10 +82,10 @@ export default function About() {
                 >
                     <h3 className="text-3xl font-bold mb-6 text-center">Sobre</h3>
                     <p className="text-lg mb-4 text-center">
-                        Atualmente, estou cursando Análise e Desenvolvimento de Sistemas no Centro Universitário Maurício de Nassau, após concluir a formação técnica em Informática no Instituto Federal do Piauí.
-                    </p>
-                    <p className="text-lg mb-4 text-center">
-                        Sou um desenvolvedor júnior com experiência em desenvolvimento FullStack com PHP, além de habilidades na criação de aplicações móveis utilizando React Native e Flutter.
+                    Sou desenvolvedor FullStack com experiência em PHP, utilizando frameworks como Laravel e CodeIgniter,
+                    além de desenvolvimento backend em Python com Flask. Também atuo na criação de aplicações web modernas com Next.js e React.js e
+                    no desenvolvimento mobile com os frameworks React Native e Ionic. Tenho experiência no desenvolvimento de sistemas robustos,
+                    integrando back-end e front-end para soluções eficientes.
                     </p>
 
                 </motion.div>

@@ -1,7 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
-import { Linkedin, LinkedinIcon } from 'lucide-react';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaPhp, FaPython, FaGitAlt, FaJava, FaWhatsapp, FaEnvelope, FaGithub } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaPhp, FaPython, FaGitAlt, FaJava, FaWhatsapp, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiFlutter } from 'react-icons/si';
 
 type ContactProps = {
@@ -117,7 +116,7 @@ export default function About() {
                             title="WhatsApp"
                         />
                         <ContactCard
-                            Icon={LinkedinIcon}
+                            Icon={FaLinkedin}
                             link="https://www.linkedin.com/in/joaosenapassos/"
                             title="Linkedin"
                         />

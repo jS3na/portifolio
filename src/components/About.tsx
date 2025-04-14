@@ -1,5 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
+import { Linkedin, LinkedinIcon } from 'lucide-react';
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaPhp, FaPython, FaGitAlt, FaJava, FaWhatsapp, FaEnvelope, FaGithub } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiFlutter } from 'react-icons/si';
 
@@ -114,6 +115,11 @@ export default function About() {
                             Icon={FaWhatsapp}
                             link="https://wa.me/86989030943"
                             title="WhatsApp"
+                        />
+                        <ContactCard
+                            Icon={LinkedinIcon}
+                            link="https://www.linkedin.com/in/joaosenapassos/"
+                            title="Linkedin"
                         />
                     </div>
                 </motion.div>

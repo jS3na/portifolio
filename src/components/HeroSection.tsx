@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Terminal, Code } from "lucide-react"
-import ImagemSena from '@/assets/imagem_sena.jpg'
+import ImagemSena from '../assets/imagem_sena.jpg'
 
 export default function HeroSection() {
     const handleWhatsAppClick = () => {

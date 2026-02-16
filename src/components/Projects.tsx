@@ -7,10 +7,10 @@ import TechList from "./TechList";
 import ProjectCard from "./ProjectCard";
 import Overlay from "./Overlay";
 
-import ProjetoLeticia from "@/assets/projeto_leticia.png";
-import ProjetoRealEstate from "@/assets/real_estate.png";
-import ProjetoGrupoFabrica from "@/assets/landing_grupofabrica.png";
-import ProjetoDoutoraBiotec from "@/assets/projeto_doutorabiotec.png";
+import ProjetoLeticia from "../assets/projeto_leticia.png";
+import ProjetoRealEstate from "../assets/real_estate.png";
+import ProjetoGrupoFabrica from "../assets/landing_grupofabrica.png";
+import ProjetoDoutoraBiotec from "../assets/projeto_doutorabiotec.png";
 
 import { StaticImageData } from "next/image";
 

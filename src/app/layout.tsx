@@ -17,6 +17,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "João Gabriel Sena",
   description: "Portifólio",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1"
 };
 
 export default function RootLayout({

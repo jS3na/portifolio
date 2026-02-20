@@ -1,128 +1,222 @@
-"use client";
-import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaPhp, FaPython, FaGitAlt, FaJava, FaWhatsapp, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiFlutter } from 'react-icons/si';
+"use client"
 
-type ContactProps = {
-    Icon: React.ElementType;
-    title: string;
-    link: string;
+import * as React from "react"
+import Link from "next/link"
+import {
+  ArrowRight,
+  Database,
+  GitBranch,
+  Mail,
+  MessageCircle,
+  Smartphone,
+  Sparkles,
+  Workflow,
+  Server,
+  Globe,
+  Code2,
+  ShieldCheck,
+} from "lucide-react"
+
+type AboutProps = {
+  id?: string
+  name?: string
+  title?: string
+  description?: string
+  email?: string
+  github?: string
+  linkedin?: string
+  phoneE164?: string
+  whatsappMessage?: string
 }
 
-type SkillProps = {
-    Icon: React.ElementType;
-    title: string;
+function cn(...classes: Array<string | false | null | undefined>) {
+  return classes.filter(Boolean).join(" ")
 }
 
-const Skills = ({ Icon, title }: SkillProps) => (
-    <motion.div
-        className="flex flex-col items-center"
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: 'spring', stiffness: 300 }}
+function Badge({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-100">
+      {children}
+    </span>
+  )
+}
+
+function Pill({
+  children,
+  icon: Icon,
+}: {
+  children: React.ReactNode
+  icon: React.ComponentType<{ className?: string }>
+}) {
+  return (
+    <span className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-zinc-200 hover:bg-white/10 transition">
+      <Icon className="h-4 w-4 text-teal-200" aria-hidden />
+      {children}
+    </span>
+  )
+}
+
+function Card({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <div
+      className={cn(
+        "rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur",
+        "shadow-[0_1px_0_0_rgba(255,255,255,0.06),0_24px_80px_-55px_rgba(0,0,0,0.9)]",
+        className
+      )}
     >
-        <Icon className="w-12 h-12 text-gray-800" />
-        <span className="mt-2 text-lg">{title}</span>
-    </motion.div>
-);
-
-const ContactCard = ({ Icon, link, title }: ContactProps) => (
-    <div className="p-4">
-        <a href={link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
-            <Icon className="w-12 h-12 text-gray-800" />
-            <span className="mt-2 text-lg">{title}</span>
-        </a>
+      {children}
     </div>
-);
+  )
+}
 
-export default function About() {
-    return (
-        <section className="py-20 bg-lime-50 text-gray-700">
-            <div className="max-w-7xl mx-auto px-6">
+export default function About({
+  id = "about",
+  name = "João Gabriel",
+  title = "FullStack • Laravel • React • React Native",
+  description = "Desenvolvo sites, apps e sistemas empresariais com foco em performance e organização. Trabalho com Next.js/React no front, Laravel e Spring Boot no backend e APIs em Python/Flask, usando mensageria (RabbitMQ/Kafka), PostgreSQL/MongoDB e Git.",
+  email = "passosjoaogabriel29@gmail.com",
+  github = "https://github.com/js3na",
+  linkedin = "https://www.linkedin.com/in/joaosenapassos/",
+  phoneE164 = "5586989030943",
+  whatsappMessage = "Olá! Quero pedir um orçamento para um projeto.",
+}: AboutProps) {
+  const waHref = `https://wa.me/${phoneE164}?text=${encodeURIComponent(whatsappMessage)}`
+  const mailHref = `mailto:${email}`
 
-                <motion.h2
-                    className="text-4xl font-extrabold mb-10 text-center"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    Sobre Mim
-                </motion.h2>
+  const techs = [
+    { name: "Next.js", icon: Globe },
+    { name: "React", icon: Sparkles },
+    { name: "React Native", icon: Smartphone },
+    { name: "Laravel", icon: Server },
+    { name: "Spring Boot", icon: ShieldCheck },
+    { name: "Python", icon: Code2 },
+    { name: "Flask", icon: Workflow },
+    { name: "RabbitMQ", icon: Workflow },
+    { name: "Kafka", icon: Workflow },
+    { name: "PostgreSQL", icon: Database },
+    { name: "MongoDB", icon: Database },
+    { name: "Git", icon: GitBranch },
+  ]
 
-                {/* Habilidades */}
-                <motion.div
-                    className="mb-16"
-                    id="skills"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h3 className="text-3xl font-bold mb-8 text-center">Habilidades</h3>
+  return (
+    <section id={id} className="relative overflow-hidden bg-zinc-950 text-zinc-100">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 [background:radial-gradient(1000px_circle_at_18%_25%,rgba(20,184,166,0.16),transparent_55%),radial-gradient(900px_circle_at_82%_30%,rgba(34,211,238,0.12),transparent_55%)]" />
+        <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,rgba(255,255,255,0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.25)_1px,transparent_1px)] [background-size:64px_64px]" />
+      </div>
 
-                    <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-                        <Skills Icon={FaHtml5} title='HTML' />
-                        <Skills Icon={FaCss3Alt} title='CSS' />
-                        <Skills Icon={FaJsSquare} title='JavaScript' />
-                        <Skills Icon={SiTypescript} title='TypeScript' />
-                        <Skills Icon={FaReact} title='React' />
-                        <Skills Icon={SiNextdotjs} title='Next.js' />
-                        <Skills Icon={SiFlutter} title='Flutter' />
-                        <Skills Icon={FaPhp} title='PHP' />
-                        <Skills Icon={FaPython} title='Python' />
-                        <Skills Icon={FaJava} title='Java' />
-                        <Skills Icon={FaGitAlt} title='Git' />
-                    </div>
-                </motion.div>
-
-                {/* Sobre */}
-                <motion.div
-                    id="about"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h3 className="text-3xl font-bold mb-6 text-center">Sobre</h3>
-                    <p className="text-lg mb-4 text-center">
-                    Sou desenvolvedor FullStack com experiência em PHP, utilizando frameworks como Laravel e CodeIgniter,
-                    além de desenvolvimento backend em Python com Flask. Também atuo na criação de aplicações web modernas com Next.js e React.js e
-                    no desenvolvimento mobile com os frameworks React Native e Ionic. Tenho experiência no desenvolvimento de sistemas robustos,
-                    integrando back-end e front-end para soluções eficientes.
-                    </p>
-
-                </motion.div>
-
-                {/* Contato */}
-                <motion.div
-                    id="contact"
-                    className="flex md: flex-col mt-16 text-center justify-center items-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h3 className="text-3xl font-bold mb-6">Contato</h3>
-                    <div className="flex flex-col md:flex-row justify-start gap-6">
-                        <ContactCard
-                            Icon={FaEnvelope}
-                            link="mailto:passosjoaogabriel29@gmail.com"
-                            title="Email"
-                        />
-                        <ContactCard
-                            Icon={FaGithub}
-                            link="https://github.com/js3na"
-                            title="GitHub"
-                        />
-                        <ContactCard
-                            Icon={FaWhatsapp}
-                            link="https://wa.me/86989030943"
-                            title="WhatsApp"
-                        />
-                        <ContactCard
-                            Icon={FaLinkedin}
-                            link="https://www.linkedin.com/in/joaosenapassos/"
-                            title="Linkedin"
-                        />
-                    </div>
-                </motion.div>
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="grid gap-6 lg:grid-cols-12">
+          {/* Left */}
+          <div className="lg:col-span-5">
+            <div className="flex flex-wrap gap-2">
+              <Badge>
+                <Sparkles className="mr-1.5 h-3.5 w-3.5 text-teal-300" />
+                Disponível p/ projetos
+              </Badge>
+              <Badge>
+                <Workflow className="mr-1.5 h-3.5 w-3.5 text-cyan-300" />
+                Web • Mobile • Sistemas
+              </Badge>
             </div>
-        </section>
-    );
+
+            <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
+              <span className="text-zinc-200">Sobre</span>{" "}
+              <span className="bg-gradient-to-r from-teal-300 via-cyan-300 to-teal-200 bg-clip-text text-transparent">
+                {name}
+              </span>
+            </h2>
+
+            <p className="mt-2 text-sm font-medium text-zinc-300">{title}</p>
+
+            <p className="mt-4 text-sm leading-relaxed text-zinc-300">
+              {description}
+            </p>
+
+            <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-400 px-4 text-sm font-medium text-zinc-950 transition hover:brightness-110"
+              >
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp
+                <ArrowRight className="h-4 w-4" />
+              </a>
+
+              <a
+                href={mailHref}
+                className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 text-sm font-medium text-zinc-100 transition hover:bg-white/10"
+              >
+                <Mail className="h-4 w-4 text-teal-200" />
+                Email
+              </a>
+            </div>
+          </div>
+
+          {/* Right */}
+          <div className="lg:col-span-7" id="skills">
+            <Card>
+              <p className="text-sm font-semibold text-zinc-100">Stack</p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {techs.map((tech) => (
+                  <Pill key={tech.name} icon={tech.icon}>
+                    {tech.name}
+                  </Pill>
+                ))}
+              </div>
+
+              <div className="mt-6 grid gap-2 sm:grid-cols-3" id="contact">
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-zinc-100 transition hover:bg-white/10"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <GitBranch className="h-4 w-4 text-teal-200" />
+                    GitHub
+                  </span>
+                  <ArrowRight className="h-4 w-4 text-zinc-300" />
+                </a>
+
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-zinc-100 transition hover:bg-white/10"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <Smartphone className="h-4 w-4 text-teal-200" />
+                    LinkedIn
+                  </span>
+                  <ArrowRight className="h-4 w-4 text-zinc-300" />
+                </a>
+
+                <Link
+                  href="#projects"
+                  className="inline-flex items-center justify-between rounded-2xl bg-gradient-to-r from-teal-400 to-cyan-400 px-4 py-3 text-sm font-medium text-zinc-950 transition hover:brightness-110"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <Smartphone className="h-4 w-4" />
+                    Projetos
+                  </span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }

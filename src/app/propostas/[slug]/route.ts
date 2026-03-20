@@ -18,6 +18,8 @@ export async function GET(
   const portifolioUrl = process.env.URL;
   const pdfUrl = `${portifolioUrl}/propostas-clientes/${slug}.pdf`;
 
+  console.log("ENV TEST:", process.env.SMTP_HOST);
+
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT),

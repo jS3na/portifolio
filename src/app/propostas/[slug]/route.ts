@@ -18,7 +18,7 @@ export async function GET(
   const portifolioUrl = process.env.URL;
   const pdfUrl = `${portifolioUrl}/propostas-clientes/${slug}.pdf`;
 
-  console.log("ENV TEST:", process.env.SMTP_HOST);
+  console.log("");
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -30,22 +30,17 @@ export async function GET(
     },
   });
 
-console.log("ANTES DO EMAIL");
+    try {
+    await transporter.sendMail({
+        from: `"Propostas" <${process.env.SMTP_USER}>`,
+        to: "passosjoaogabriel29@gmail.com",
+        subject: `Proposta acessada: ${slug}`,
+        text: `IP: ${ip} / User-Agent: ${userAgent} / Referer: ${referer}`,
+    });
 
-try {
-  console.log("CRIANDO EMAIL...");
-
-  await transporter.sendMail({
-    from: `"Propostas" <${process.env.SMTP_USER}>`,
-    to: "passosjoaogabriel29@gmail.com",
-    subject: `Proposta acessada: ${slug} / IP: ${ip} / User-Agent: ${userAgent} / Referer: ${referer}`,
-    text: `Teste`,
-  });
-
-  console.log("EMAIL ENVIADO COM SUCESSO");
-} catch (error) {
-  console.log("ERRO AO ENVIAR EMAIL:", error);
-}
+    } catch (error) {
+        console.error(error);
+    }
 
   return NextResponse.redirect(pdfUrl, 302);
 }

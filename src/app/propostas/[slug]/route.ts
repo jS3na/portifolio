@@ -30,22 +30,22 @@ export async function GET(
     },
   });
 
-  transporter.sendMail({
+console.log("ANTES DO EMAIL");
+
+try {
+  console.log("CRIANDO EMAIL...");
+
+  await transporter.sendMail({
     from: `"Propostas" <${process.env.SMTP_USER}>`,
     to: "passosjoaogabriel29@gmail.com",
-    subject: `Proposta acessada: ${slug}`,
-    text: `
-Uma proposta foi acessada:
-
-Slug: ${slug}
-IP: ${ip}
-User-Agent: ${userAgent}
-Referer: ${referer}
-Data: ${new Date().toISOString()}
-    `,
-  }).catch((err) => {
-    console.error("Erro ao enviar email:", err);
+    subject: `Proposta acessada: ${slug} / IP: ${ip} / User-Agent: ${userAgent} / Referer: ${referer}`,
+    text: `Teste`,
   });
+
+  console.log("EMAIL ENVIADO COM SUCESSO");
+} catch (error) {
+  console.log("ERRO AO ENVIAR EMAIL:", error);
+}
 
   return NextResponse.redirect(pdfUrl, 302);
 }

@@ -1,3 +1,5 @@
-export default function handler(req, res) {
-  res.status(200).json({ active: true });
+import { NextResponse } from "next/server";
+
+export async function GET() {
+  return NextResponse.json({ active: true });
 }
